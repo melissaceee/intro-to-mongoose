@@ -16,10 +16,10 @@ const connect = async () => {
 };
 
 const runQueries = async () => {
-    console.log('Queries running.')
-    // await createTodo()
-    await findTodos()
-    await foundTodo()
+  console.log('Queries running.')
+  // await createTodo()
+  await findTodos()
+  await foundTodo()
 };
 
 connect()
@@ -28,27 +28,27 @@ connect()
 // ! Important to use the async keyword when working with promises.
 async function createTodo() {
 
-    const todoData = {
-        text: "Learn HTML",
-        isComplete: false
-    }
+  const todoData = {
+    text: "Learn HTML",
+    isComplete: false
+  }
 
-    const todo = await Todo.create(todoData)
-    console.log("New Todo", todo)
+  const todo = await Todo.create(todoData)
+  console.log("New Todo", todo)
 }
 
 // * All todos similar to INDEX
 const findTodos = async () => {
+  
+  const todos = await Todo.find({})
 
-    const todos = await Todo.find({})
-
-    console.log("All todos:", todos)
+  console.log("All todos:", todos)
 }
 
 // * Find a todo by _id SHOW
 const foundTodo = async () => {
-    const id = '6699a8682bc0077fc730b5aa'
-    const todo = await Todo.findById(id)
+  const id = '6699a8682bc0077fc730b5aa'
+  const todo = await Todo.findById(id)
 
-    console.log("The one todo:", todo)
+  console.log("The one todo:",todo)
 }
